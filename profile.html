@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile & Upload - Internshala Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .profile-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .status-msg {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            display: none;
+        }
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+            display: block;
+        }
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            margin-top: 1rem;
+            display: none;
+            overflow: hidden;
+        }
+        .progress-inner {
+            width: 0%;
+            height: 100%;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Internshala Clone</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="internships.html">Internships</a></li>
+            <li><a href="profile.html" class="active">Upload Resume</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="profile-container">
+            <h2 class="section-title">Upload Your Resume</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                Upload your resume to start applying for internships. Your file will be securely stored in AWS S3.
+            </p>
+
+            <div class="upload-area" id="drop-zone">
+                <div class="upload-icon">📄</div>
+                <p>Drag & Drop your resume here or <strong>Click to Browse</strong></p>
+                <p style="font-size: 0.8rem; color: #888; margin-top: 10px;">Supported formats: PDF, DOCX (Max 5MB)</p>
+                <input type="file" id="file-input" accept=".pdf,.docx">
+            </div>
+
+            <div id="file-info" style="margin-top: 1rem; text-align: center; font-weight: 600; color: var(--primary);"></div>
+
+            <div class="progress-bar" id="progress-container">
+                <div class="progress-inner" id="progress-bar"></div>
+            </div>
+
+            <div id="status-message" class="status-msg"></div>
+
+            <div style="margin-top: 3rem;">
+                <h3>Why upload a resume?</h3>
+                <ul style="margin-top: 1rem; color: #555; list-style-position: inside;">
+                    <li>Quick apply to any internship with one click.</li>
+                    <li>Get discovered by top employers.</li>
+                    <li>Secure storage on Amazon S3.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

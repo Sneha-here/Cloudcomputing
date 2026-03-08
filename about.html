@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About InternQ | Precision Career Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Intern<span>Q</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="internships.html">Internships</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h1 style="font-weight: 900; font-size: 3rem; margin-bottom: 1.5rem; color: var(--secondary);">The InternQ Philosophy</h1>
+            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 4rem;">We believe in the power of precision. InternQ connects the world's most talented students with industry-defining opportunities, backed by industrial-grade cloud infrastructure.</p>
+            
+            <div class="card" style="margin-bottom: 3rem;">
+                <h3 style="margin-bottom: 1rem;">Enterprise Trust</h3>
+                <p>All career documents and personal data are encrypted and archived using Amazon Web Services (S3), ensuring global availability and peak security.</p>
+            </div>
+
+            <div class="card" id="contact-card">
+                <h3 style="margin-bottom: 2rem; font-size: 1.5rem; font-weight: 800;">Contact Inquiries</h3>
+                <form id="contact-form">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <input type="text" id="name" placeholder="Full Name" required>
+                        <input type="email" id="email" placeholder="Professional Email" required>
+                    </div>
+                    <textarea id="message" placeholder="Describe your inquiry..." rows="6" required></textarea>
+                    <button class="btn-primary" type="submit">Establish Contact</button>
+                </form>
+                <div id="contact-status" style="margin-top: 1.5rem; text-align: center; display: none; padding: 15px; border-radius: 12px; font-weight: 600;"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

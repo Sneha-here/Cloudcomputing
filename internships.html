@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internships | InternQ Discovery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .listing-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .stipend {
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .apply-btn {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html" class="logo">Intern<span>Q</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="internships.html" class="active">Internships</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h1 style="margin-bottom: 3rem; font-weight: 800; font-size: 2.5rem;">Discover Opportunities</h1>
+        <div class="grid">
+            <div class="card">
+                <div class="badge">REMOTE</div>
+                <h3>Senior AI Engineer</h3>
+                <p>MetaScale Systems</p>
+                <div class="listing-info">
+                    <span>Full-Time Intern</span>
+                    <span class="stipend">₹45,000 / mo</span>
+                </div>
+                <button class="btn-primary apply-btn" onclick="openApplicationModal('Senior AI Engineer')">Quick
+                    Apply</button>
+            </div>
+
+            <div class="card">
+                <div class="badge">MUMBAI / ONSITE</div>
+                <h3>Lead Product Designer</h3>
+                <p>Studio Nexus</p>
+                <div class="listing-info">
+                    <span>Performance Based</span>
+                    <span class="stipend">₹30,000 / mo</span>
+                </div>
+                <button class="btn-primary apply-btn" onclick="openApplicationModal('Lead Product Designer')">Quick
+                    Apply</button>
+            </div>
+
+            <div class="card">
+                <div class="badge">REMOTE</div>
+                <h3>Growth Strategist</h3>
+                <p>Venture Labs</p>
+                <div class="listing-info">
+                    <span>Part-Time</span>
+                    <span class="stipend">₹25,000 / mo</span>
+                </div>
+                <button class="btn-primary apply-btn" onclick="openApplicationModal('Growth Strategist')">Quick
+                    Apply</button>
+            </div>
+
+            <div class="card">
+                <div class="badge">BANGALORE</div>
+                <h3>Full Stack Intern</h3>
+                <p>CloudCore Tech</p>
+                <div class="listing-info">
+                    <span>Full-Time Intern</span>
+                    <span class="stipend">₹35,000 / mo</span>
+                </div>
+                <button class="btn-primary apply-btn" onclick="openApplicationModal('Full Stack Intern')">Quick
+                    Apply</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Professional Modal -->
+    <div id="apply-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title" style="font-weight: 800; margin-bottom: 0.5rem; color: var(--secondary);">Apply for
+                Position</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">Please provide your
+                professional resume (PDF only) to initialize the application process.</p>
+
+            <div id="drop-zone"
+                style="border: 2px dashed var(--border); padding: 40px; border-radius: 16px; text-align: center; cursor: pointer; background: var(--bg-sub); transition: var(--transition);">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">📄</div>
+                <p style="font-weight: 600; color: var(--secondary);">Click to browse files</p>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">Supported: PDF (Max 5MB)</p>
+                <input type="file" id="file-input" style="display: none;" accept=".pdf">
+            </div>
+
+            <div id="file-info"
+                style="margin-top: 1.5rem; text-align: center; font-weight: 700; color: var(--primary);"></div>
+            <div id="status-message"
+                style="margin-top: 1rem; text-align: center; font-size: 0.9rem; padding: 12px; border-radius: 8px; display: none;">
+            </div>
+
+            <button id="submit-application" class="btn-primary" style="margin-top: 2rem; display: none;">Submit My
+                Application</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

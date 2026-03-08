@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InternQ | Professional Career Foundation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Intern<span>Q</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="internships.html">Internships</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Foundation for your <span>Future</span></h1>
+        <p>Expertly curated internship opportunities from global leaders and high-growth startups.</p>
+        <div class="search-container">
+            <input type="text" placeholder="Explore by role, skills, or company...">
+            <button class="search-btn">Find Oppurtunities</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title">Popular Disciplines</h2>
+        <div class="grid">
+            <div class="card" onclick="window.location.href='internships.html?cat=marketing'">
+                <div class="badge">GROWTH</div>
+                <h3>Growth Marketing</h3>
+                <p>Strategic brand scaling and performance marketing roles.</p>
+            </div>
+            <div class="card" onclick="window.location.href='internships.html?cat=development'">
+                <div class="badge">ENGINEERING</div>
+                <h3>Software Engineering</h3>
+                <p>Full-stack and backend roles in modern tech stacks.</p>
+            </div>
+            <div class="card" onclick="window.location.href='internships.html?cat=design'">
+                <div class="badge">PRODUCT</div>
+                <h3>Product Design</h3>
+                <p>Creating user-centric experiences for global products.</p>
+            </div>
+            <div class="card" onclick="window.location.href='internships.html?cat=data'">
+                <div class="badge">AI/ML</div>
+                <h3>Data Intelligence</h3>
+                <p>Data science, analytics, and machine learning research.</p>
+            </div>
+            <div class="card" onclick="window.location.href='internships.html?cat=writing'">
+                <div class="badge">CONTENT</div>
+                <h3>Creative Writing</h3>
+                <p>Narrative design and high-impact content strategy.</p>
+            </div>
+            <div class="card" onclick="window.location.href='internships.html?cat=finance'">
+                <div class="badge">ANALYTICS</div>
+                <h3>Market Analysis</h3>
+                <p>Financial modeling and business intelligence roles.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer style="padding: 60px 10%; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+        &copy; 2026 InternQ. All documents secured via Amazon S3.
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
