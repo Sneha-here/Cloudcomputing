@@ -1,12 +1,19 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 const multer = require('multer');
 const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
 const { Upload } = require('@aws-sdk/lib-storage');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
+
+console.log('--- Diagnostic Info ---');
+console.log('Current Directory:', __dirname);
+console.log('Project Root:', path.resolve(__dirname));
+console.log('Looking for index.html at:', path.join(__dirname, 'index.html'));
+console.log('-----------------------');
 
 // S3 Configuration
 const s3Client = new S3Client({
@@ -23,9 +30,31 @@ const upload = multer({
     limits: { fileSize: 5 * 1024 * 1024 }
 });
 
-app.use(express.static(path.join(__dirname)));
+// Explicitly serve index.html for the root route
+// app.get('/', (req, res) => {
+//     console.log('Handling GET / request');
+//     res.sendFile(path.join(__dirname, 'index.html'), (err) => {
+//         if (err) {
+//             console.error('Error sending index.html:', err);
+//             res.status(500).send('Error loading page: ' + err.message);
+//         }
+//     });
+// });
+
+// Serve other static files (css, js, images)
+// app.use(cors());
+// app.use(express.static(path.join(__dirname)));
+// app.use(express.json());
+app.use(cors());
 app.use(express.json());
 
+// Serve all static files (html, css, js)
+app.use(express.static(__dirname));
+
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
 // 1. Resume Upload Route
 app.post('/upload', upload.single('resume'), async (req, res) => {
     if (!req.file) return res.status(400).json({ error: 'No resume provided' });
